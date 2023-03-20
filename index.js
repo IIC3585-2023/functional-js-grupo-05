@@ -1,5 +1,6 @@
 const fs = require('fs/promises');
 const _ = require('lodash');
+const { onlyFirstPhrases } = require('./onlyFirstPhrases');
 
 const readMd = (path) => fs.readFile(path, 'utf8');
 const writeMd = (path, text) => fs.writeFile(path, text);
@@ -12,9 +13,10 @@ const eachPhraseInAParagraph = (text) => _.replace(text, /(?<=\S\.) *(?=[A-Z])/g
 
 const main = async () => {
   let md = await readMd('test.md');
-  md = addSpacesBeforePhrase(md, 5);
-  md = eachPhraseInAParagraph(md);
-  await writeMd('test1.md', md);
+  // md = addSpacesBeforePhrase(md, 5);
+  // md = eachPhraseInAParagraph(md);
+  // await writeMd('test1.md', md);
+  console.log(onlyFirstPhrases(md, 2));
 };
 
 main();
