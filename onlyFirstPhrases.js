@@ -1,7 +1,5 @@
 const _ = require('lodash');
 
-const pipe = (functions) => (data) => functions.reduce((value, func) => func(value), data);
-
 const takeFirstPhrases = (n, phrases) => _.take(phrases, n);
 const curriedTakeFirstPhrases = _.curry(takeFirstPhrases);
 
@@ -15,7 +13,7 @@ const onlyFirstPhrases = (text, n) => {
     (firstPhrases) => _.map(firstPhrases, (phrases) => _.join(phrases, '')),
     (firstPhrasesParagraphs) => _.join(firstPhrasesParagraphs, '\n\n'),
   ];
-  const pipeline = pipe(operations);
+  const pipeline = _.flow(...operations);
   return pipeline(text);
 };
 
