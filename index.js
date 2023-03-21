@@ -1,6 +1,8 @@
 const fs = require('fs/promises');
 const _ = require('lodash');
 
+const maxLengthPerLine = require('./maxLengthPerLine');
+
 const readMd = (path) => fs.readFile(path, 'utf8');
 const writeMd = (path, text) => fs.writeFile(path, text);
 
@@ -12,7 +14,8 @@ const addIndentBeforeParagraph = (text, n) => _.repeat(' ', n) + _.replace(text,
 
 const main = async () => {
   let md = await readMd('test.md');
-  md = addSpacesBeforePhrase(md, 5);
+  // md = addSpacesBeforePhrase(md, 5);
+  md = maxLengthPerLine(md, 20);
   await writeMd('test1.md', md);
 };
 
