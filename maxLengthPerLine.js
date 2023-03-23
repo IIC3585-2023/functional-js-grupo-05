@@ -23,4 +23,6 @@ const maxLengthPerLine = (text, n) => {
   return _.join(newLines, '\n');
 };
 
-module.exports = maxLengthPerLine;
+module.exports = {
+  maxLengthPerLine,
+};
