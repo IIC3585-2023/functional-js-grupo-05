@@ -4,6 +4,8 @@ const {
   writeMd,
   addIndentBeforeParagraph,
   eachPhraseInAParagraph,
+  addSpacesBeforePhrase,
+  spacesBeforeParagraph,
 } = require('../../utils');
 const {
   filterParagraphs,
@@ -56,6 +58,26 @@ const test5 = async () => {
   md = eachPhraseInAParagraph(md);
   md = addIndentBeforeParagraph(md, 2);
   await writeMd(path.resolve(__dirname, './out5.txt'), md);
+};
+
+const test6 = async () => {
+  //  3, 1 y 4
+  let md = await readMd(path.resolve(__dirname, './in.txt'));
+  md = maxLengthPerLine(md, 20);
+  md = addSpacesBeforePhrase(md, 6);
+  md = addIndentBeforeParagraph(md, 3);
+  await writeMd(path.resolve(__dirname, './out6.txt'), md);
+};
+
+const test7 = async () => {
+  // 3 4 2 5 y 6
+  let md = await readMd(path.resolve(__dirname, './in.txt'));
+  md = maxLengthPerLine(md, 20);
+  md = addIndentBeforeParagraph(md, 3);
+  md = spacesBeforeParagraph(md, 6);
+  md = filterParagraphs(md, curriedGreater(3));
+  md = filterParagraphs(md, curriedLesser(5));
+  await writeMd(path.resolve(__dirname, './out7.txt'), md);
 };
 
 const main = async () => {
