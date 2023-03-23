@@ -1,32 +1,15 @@
-Hola. Este
-es un texto
-de prueba
-para eso.
-Nada mas.
-Nada menos.
+Hola. Este es un texto de
+prueba para eso. Nada
+mas. Nada menos.
 
-Este es
-otro
-parrafo
+Este es otro parrafo
 solo.
 
-Este
-parrafo
-tiene 6
-frases.
-Esta es la
-segunda
-frase. Esta
-es la
-tercera
-frase. Esta
-es la
-cuarta
-frase. Esta
-es la
-quinta
-frase. Y
-finalmente
-esta es la
-sexta
-frase.
+Este parrafo tiene 6
+frases. Esta es la
+segunda frase. Esta es la
+tercera frase. Esta es la
+cuarta frase. Esta es la
+quinta frase. Y
+finalmente esta es la
+sexta frase.
