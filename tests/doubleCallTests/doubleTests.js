@@ -6,7 +6,7 @@ const {
   eachPhraseInAParagraph,
   addSpacesBeforePhrase,
   spacesBeforeParagraph,
-} = require('../../index');
+} = require('../../utils');
 const {
   filterParagraphs,
   curriedGreater,

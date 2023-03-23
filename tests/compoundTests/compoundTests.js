@@ -4,7 +4,7 @@ const {
   writeMd,
   addIndentBeforeParagraph,
   eachPhraseInAParagraph,
-} = require('../../index');
+} = require('../../utils');
 const {
   filterParagraphs,
   curriedGreater,
