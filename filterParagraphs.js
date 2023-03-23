@@ -7,7 +7,7 @@ const curriedGreater = _.curry(filterLargerSizePhrases);
 const curriedLesser = _.curry(filterSmallerSizePhrases);
 
 const filterParagraphs = (text, filter) => {
-  const paragraphs = _.split(text, /(?<=\n\n+)(?=[A-Z])/g);
+  const paragraphs = _.split(text, /(?<=\n\n+)(?=\s*[A-Z])/g);
   const paragraphsFiltered = _.filter(paragraphs, filter);
   return _.join(paragraphsFiltered, '');
 };
