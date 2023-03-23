@@ -4,19 +4,37 @@ const {
   writeMd,
   addIndentBeforeParagraph,
   eachPhraseInAParagraph,
+  addSpacesBeforePhrase,
+  spacesBeforeParagraph,
 } = require('../../index');
-const { filterParagraphs, curriedGreater, curriedLesser } = require('../../filterParagraphs');
+const {
+  filterParagraphs,
+  curriedGreater,
+  curriedLesser,
+} = require('../../filterParagraphs');
 const { maxLengthPerLine } = require('../../maxLengthPerLine');
 const { onlyFirstPhrases } = require('../../onlyFirstPhrases');
 
 // Test 1 debería hacerse con addSpacesBeforePhrase
+const test1 = async () => {
+  // read file relative
+  const md = await readMd(path.resolve(__dirname, './in.txt'));
+  const out = addSpacesBeforePhrase(md, 5);
+  await writeMd(path.resolve(__dirname, './out1.txt'), out);
+};
 // Test 2 debería hacerse con la función de "Cada párrafo debe estar
 // separado por n líneas (después de un punto aparte)"
+const test2 = async () => {
+  // read file relative
+  const md = await readMd(path.resolve(__dirname, './in.txt'));
+  const out = spacesBeforeParagraph(md, 5);
+  await writeMd(path.resolve(__dirname, './out2.txt'), out);
+};
 
 const test3 = async () => {
   // read file relative
   const md = await readMd(path.resolve(__dirname, './in.txt'));
-  const out = maxLengthPerLine(md, 11);
+  const out = maxLengthPerLine(md, 25);
   await writeMd(path.resolve(__dirname, './out3.txt'), out);
 };
 
@@ -51,6 +69,8 @@ const test8 = async () => {
 };
 
 const main = async () => {
+  await test1();
+  await test2();
   await test3();
   await test4();
   await test5();
