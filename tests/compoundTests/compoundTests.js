@@ -5,7 +5,11 @@ const {
   addIndentBeforeParagraph,
   eachPhraseInAParagraph,
 } = require('../../index');
-const { filterParagraphs, curriedGreater, curriedLesser } = require('../../filterParagraphs');
+const {
+  filterParagraphs,
+  curriedGreater,
+  curriedLesser,
+} = require('../../filterParagraphs');
 const { maxLengthPerLine } = require('../../maxLengthPerLine');
 const { onlyFirstPhrases } = require('../../onlyFirstPhrases');
 
