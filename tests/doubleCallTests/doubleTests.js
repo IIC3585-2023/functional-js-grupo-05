@@ -5,7 +5,11 @@ const {
   addIndentBeforeParagraph,
   eachPhraseInAParagraph,
 } = require('../../index');
-const { filterParagraphs, curriedGreater, curriedLesser } = require('../../filterParagraphs');
+const {
+  filterParagraphs,
+  curriedGreater,
+  curriedLesser,
+} = require('../../filterParagraphs');
 const { maxLengthPerLine } = require('../../maxLengthPerLine');
 const { onlyFirstPhrases } = require('../../onlyFirstPhrases');
 
@@ -28,13 +32,19 @@ const test4 = async () => {
 
 const test5 = async () => {
   const md = await readMd(path.resolve(__dirname, './in.txt'));
-  const out = filterParagraphs(filterParagraphs(md, curriedGreater(3)), curriedGreater(5));
+  const out = filterParagraphs(
+    filterParagraphs(md, curriedGreater(3)),
+    curriedGreater(5),
+  );
   await writeMd(path.resolve(__dirname, './out5.txt'), out);
 };
 
 const test6 = async () => {
   const md = await readMd(path.resolve(__dirname, './in.txt'));
-  const out = filterParagraphs(filterParagraphs(md, curriedLesser(5)), curriedLesser(3));
+  const out = filterParagraphs(
+    filterParagraphs(md, curriedLesser(5)),
+    curriedLesser(3),
+  );
   await writeMd(path.resolve(__dirname, './out6.txt'), out);
 };
 
