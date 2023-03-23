@@ -6,7 +6,7 @@ const writeMd = (path, text) => fs.writeFile(path, text);
 
 // Este regex hace match que todos los puntos que tienen texto diferente a un espacio antes
 // y texto con mayuscula despues de un espacio despues
-const addSpacesBeforePhrase = (text, n) => _.replace(text, /(?<=\S)\.\s(?=[A-Z])/g, _.padEnd('.', n + 1));
+const addSpacesBeforePhrase = (text, n) => _.replace(text, /(?<=\S)\.\s+(?=[A-Z])/g, _.padEnd('.', n + 1));
 
 const spacesBeforeParagraph = (text, n) => _.replace(
   text,
