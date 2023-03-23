@@ -66,7 +66,7 @@ const test6 = async () => {
   md = maxLengthPerLine(md, 20);
   md = addSpacesBeforePhrase(md, 6);
   md = addIndentBeforeParagraph(md, 3);
-  await writeMd(path.resolve(__dirname, './out1.txt'), md);
+  await writeMd(path.resolve(__dirname, './out6.txt'), md);
 };
 
 const test7 = async () => {
@@ -77,7 +77,7 @@ const test7 = async () => {
   md = spacesBeforeParagraph(md, 6);
   md = filterParagraphs(md, curriedGreater(3));
   md = filterParagraphs(md, curriedLesser(5));
-  await writeMd(path.resolve(__dirname, './out3.txt'), md);
+  await writeMd(path.resolve(__dirname, './out7.txt'), md);
 };
 
 const main = async () => {
