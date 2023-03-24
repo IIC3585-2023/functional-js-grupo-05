@@ -16,7 +16,7 @@ const spacesBeforeParagraph = (text, n) => _.replace(
 
 const addIndentBeforeParagraph = (text, n) => _.repeat(' ', n)
   + _.trim(_.replace(text, /(?<=.\n\n)\s*(?=[A-Z])/g, _.padEnd(' ', n)), ' ');
-const eachPhraseInAParagraph = (text) => _.replace(text, /(?<=\S\.) *(?=[A-Z])/g, '\n\n');
+const eachPhraseInAParagraph = (text) => _.replace(text, /(?<=\S\.)( | \s)(?=[A-Z])/g, '\n\n');
 
 module.exports = {
   readMd,
